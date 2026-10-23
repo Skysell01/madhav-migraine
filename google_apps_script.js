@@ -86,18 +86,18 @@ function doPost(e) {
     ]);
 
     return ContentService
-      .createTextOutput(JSON.stringify({ 
-        status: "success", 
+      .createTextOutput(JSON.stringify({
+        status: "success",
         orderId: orderId,
-        message: "Order placed successfully on COD!" 
+        message: "Order placed successfully on COD!"
       }))
       .setMimeType(ContentService.MimeType.JSON);
 
   } catch (err) {
     return ContentService
-      .createTextOutput(JSON.stringify({ 
-        status: "error", 
-        message: err.toString() 
+      .createTextOutput(JSON.stringify({
+        status: "error",
+        message: err.toString()
       }))
       .setMimeType(ContentService.MimeType.JSON);
   } finally {
@@ -107,10 +107,10 @@ function doPost(e) {
 
 function doGet(e) {
   return ContentService
-    .createTextOutput(JSON.stringify({ 
-      status: "online", 
+    .createTextOutput(JSON.stringify({
+      status: "online",
       product: "Madhavbaug Ayurvedic Migraine & Headache Relief Roll-On",
-      version: "1.0.0" 
+      version: "1.0.0"
     }))
     .setMimeType(ContentService.MimeType.JSON);
 }
