@@ -1698,10 +1698,20 @@ ul {
 /* ==============================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ============================================================================== */
+/* ==============================================================================
+   RESPONSIVE DESIGN (ADVANCED MOBILE GRIDS & TOUCH OPTIMIZATIONS)
+   ============================================================================== */
+
+/* Tablet & Medium Screens (max-width: 992px) */
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 32px;
+  }
+
+  .hero-image-card {
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .nav-links {
@@ -1709,68 +1719,543 @@ ul {
   }
 
   .benefits-cards-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .ingredients-grid-5 {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .testimonials-grid .testimonial-card:last-child {
+    grid-column: span 2;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .legacy-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .application-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 }
 
+/* Mobile Screens (max-width: 640px) */
 @media (max-width: 640px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    padding: 6px 0;
+  }
+
   .top-bar-inner {
     justify-content: center;
     text-align: center;
+    gap: 6px;
   }
 
   .top-bar-item:nth-child(n+3) {
     display: none;
   }
 
-  .hero-title {
-    font-size: 1.75rem;
+  .top-bar-item {
+    font-size: 0.74rem;
   }
 
-  .hero-highlight-points {
-    grid-template-columns: 1fr;
+  /* Navbar */
+  .main-nav {
+    padding: 8px 0;
   }
 
-  .benefits-cards-grid {
-    grid-template-columns: 1fr;
+  .nav-logo {
+    height: 36px;
   }
 
-  .comparison-grid {
-    grid-template-columns: 1fr;
+  .brand-divider {
+    height: 22px;
   }
 
-  .ingredients-grid-5 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .application-steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .legacy-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .live-buyer-toast {
-    bottom: 90px;
-    left: 10px;
-    right: 10px;
-    max-width: none;
+  .brand-name {
+    font-size: 0.92rem;
   }
 
   .brand-subtitle {
     display: none;
   }
+
+  .cod-pill {
+    padding: 4px 8px;
+    font-size: 0.70rem;
+    gap: 4px;
+  }
+
+  .nav-cta-wrap .btn-cta-sm {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 18px 0 28px;
+  }
+
+  .hero-image-card {
+    max-width: 360px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Hero Pills: Clean 2x2 Grid on Mobile */
+  .hero-pills-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .hero-pill {
+    font-size: 0.72rem;
+    padding: 7px 10px;
+    justify-content: center;
+    text-align: center;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-title {
+    font-size: clamp(1.55rem, 6.2vw, 1.85rem);
+    line-height: 1.22;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.90rem;
+    line-height: 1.48;
+    margin-bottom: 16px;
+  }
+
+  /* Hero Highlights: 2x2 Grid of Cards on Mobile */
+  .hero-highlight-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .highlight-item {
+    padding: 10px;
+    font-size: 0.76rem;
+    line-height: 1.35;
+    border-radius: var(--radius-sm);
+  }
+
+  .highlight-item .icon {
+    font-size: 0.95rem;
+  }
+
+  /* Bundle Cards List */
+  .bundle-selector-wrap {
+    padding: 14px 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .bundle-heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .bundle-title-text {
+    font-size: 0.90rem;
+  }
+
+  .bundle-cod-guarantee {
+    font-size: 0.72rem;
+  }
+
+  .bundle-option {
+    padding: 11px 12px;
+    border-radius: var(--radius-sm);
+    gap: 8px;
+  }
+
+  .bundle-badge {
+    font-size: 0.62rem;
+    padding: 2px 7px;
+    top: -8px;
+    right: 10px;
+  }
+
+  .bundle-radio-circle {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bundle-details h4 {
+    font-size: 0.86rem;
+  }
+
+  .bundle-details p {
+    font-size: 0.70rem;
+  }
+
+  .bundle-price-final {
+    font-size: 1.2rem;
+  }
+
+  .bundle-price-cut {
+    font-size: 0.74rem;
+  }
+
+  .btn-cta {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+
+  .order-trust-strip {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: 0.70rem;
+  }
+
+  /* Section Headers */
+  .section-header {
+    margin-bottom: 24px;
+  }
+
+  .section-pill {
+    font-size: 0.70rem;
+    padding: 4px 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 5.6vw, 1.8rem);
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.48;
+  }
+
+  .banner-container-card,
+  .whatsapp-banner-card {
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+  }
+
+  /* Benefits Cards: Clean 2x2 Grid on Mobile */
+  .benefits-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .benefit-card {
+    padding: 16px 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .benefit-icon-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  .benefit-card h4 {
+    font-size: 0.88rem;
+    margin-bottom: 5px;
+    line-height: 1.25;
+  }
+
+  .benefit-card p {
+    font-size: 0.74rem;
+    line-height: 1.42;
+  }
+
+  /* Comparison Section: Clean Cards Stack */
+  .comparison-section {
+    padding: 40px 0;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .comparison-box {
+    padding: 18px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .comparison-header {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+
+  .comparison-header h3 {
+    font-size: 1.05rem;
+  }
+
+  .comparison-item {
+    font-size: 0.80rem;
+    gap: 8px;
+  }
+
+  /* Ingredients Cards: Clean 2-Column Grid on Mobile with 5th Card Centered */
+  .ingredients-banner-section {
+    padding: 40px 0;
+  }
+
+  .ingredients-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .ingredients-grid-5 .ingredient-card:last-child {
+    grid-column: span 2;
+    max-width: 280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .ingredient-card {
+    padding: 14px 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .ingredient-number {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  .ingredient-card h4 {
+    font-size: 0.88rem;
+  }
+
+  .ingredient-botanical {
+    font-size: 0.68rem;
+  }
+
+  .ingredient-card p {
+    font-size: 0.72rem;
+    line-height: 1.38;
+  }
+
+  /* Application Steps: Clean Cards Stack on Mobile */
+  .application-section {
+    padding: 40px 0;
+  }
+
+  .application-steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .step-card {
+    padding: 18px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .step-number-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .step-card h4 {
+    font-size: 1rem;
+  }
+
+  .step-card p {
+    font-size: 0.80rem;
+  }
+
+  /* Reviews & Testimonials Cards */
+  .reviews-section {
+    padding: 40px 0;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .testimonial-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .testimonial-text {
+    font-size: 0.82rem;
+    line-height: 1.48;
+  }
+
+  /* Trust & Legacy: Clean 2x2 Stat Cards Grid */
+  .trust-legacy-section {
+    padding: 40px 0;
+  }
+
+  .legacy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .legacy-card {
+    padding: 18px 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .legacy-stat {
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+  }
+
+  .legacy-label {
+    font-size: 0.72rem;
+  }
+
+  /* FAQs */
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  .faq-question-btn {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+
+  .faq-answer-content {
+    padding: 0 16px 14px;
+    font-size: 0.84rem;
+  }
+
+  /* Footer */
+  .main-footer {
+    padding: 32px 0 85px;
+  }
+
+  /* Sticky Bottom COD Bar (Optimized for Mobile Touch) */
+  .sticky-cod-bar {
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sticky-bar-inner {
+    gap: 8px;
+  }
+
+  .sticky-product-thumb {
+    width: 42px;
+    height: 42px;
+  }
+
+  .sticky-pack-label {
+    font-size: 0.74rem;
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sticky-current-price {
+    font-size: 1.15rem;
+  }
+
+  .sticky-btn-action .btn-cta-sm {
+    padding: 9px 16px;
+    font-size: 0.84rem;
+  }
+
+  /* Modal Sheet on Mobile */
+  .modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .modal-card {
+    width: 100%;
+    max-height: 90vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    overflow-y: auto;
+  }
+
+  .modal-header-strip {
+    padding: 18px 16px 14px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .form-input {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Real-Time Buyer Proof Toast on Mobile */
+  .live-buyer-toast {
+    bottom: 78px;
+    left: 10px;
+    right: 10px;
+    max-width: none;
+    font-size: 0.74rem;
+    padding: 8px 12px;
+  }
 }
+
+/* Extra Small Screens (max-width: 380px) */
+@media (max-width: 380px) {
+  .hero-highlight-points,
+  .benefits-cards-grid,
+  .ingredients-grid-5,
+  .legacy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredients-grid-5 .ingredient-card:last-child {
+    max-width: none;
+  }
+
+  .sticky-pack-label {
+    max-width: 120px;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
